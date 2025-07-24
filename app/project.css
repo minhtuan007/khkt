@@ -1,0 +1,367 @@
+:root {
+  text-decoration: red;
+}
+#uploadInput {
+  display: none;
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+#panorama-container {
+  height: 50%;
+  width: 50%;
+  margin: auto;
+}
+.w3-bar {
+  position: absolute;
+  z-index: 300;
+}
+
+.arrow-container {
+  position: absolute;
+  z-index: 0;
+  transform-style: flat;
+  top: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow1 {
+  cursor: pointer;
+  pointer-events: auto;
+  background: url("https://vr3d.com.vn/vnpt-na2/7/hosyduong/skin/vtourskin.png")
+    0px -197px / 128px 768px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  transform: translateZ(1e12px) translate(-88px, 4px) translate(0px, 0px)
+    rotate(0deg) translate(0px, 0px);
+}
+.arrow2 {
+  /*   phải */
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(88px, 4px);
+  background-image: url("https://vr3d.com.vn/vnpt-na2/7/hosyduong/skin/vtourskin.png");
+  background-position: 56px -197px;
+  background-size: 128px 768px;
+  background-color: transparent;
+}
+.sound-container {
+  position: absolute;
+  z-index: 0;
+  transform-style: flat;
+  top: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.sound {
+  width: 57px;
+  height: 57px;
+  cursor: pointer;
+  pointer-events: auto;
+
+  transform: translate(5px, -5px);
+  background-image: url("https://vr3d.com.vn/vnpt-na2/7/hosyduong/skin/vtourskin.png");
+  background-position: 59px 61px;
+  background-size: 128px 768px;
+}
+.playpause {
+  width: 57px;
+  height: 57px;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(5px, -5px);
+  background-image: url("https://vr3d.com.vn/vnpt-na2/7/hosyduong/skin/vtourskin.png");
+  background-position: -2px 125px;
+  background-size: 128px 768px;
+}
+#trash {
+  z-index: 1;
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(-25px, -550px);
+}
+#trashText {
+  position: absolute;
+  z-index: 9;
+  width: 225px;
+  height: 30%;
+  color: #fff;
+  transform: translate(105px, -550px);
+  background-color:gray;
+  border-radius: 10px;
+  display: none;
+   justify-content: center;
+    align-items: center;
+}
+.button:active {
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+}
+.maintext {
+  position: absolute;
+  z-index: 30;
+}
+.text {
+  position: absolute;
+  z-index: 9;
+  width: 10%;
+  height: 30%;
+
+  color: #fff;
+
+  transform: translate(65px, 485px);
+  border-radius: 10px;
+  display: none;
+}
+.text2 {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  color: #fff;
+  transform: translate(5px, 485px);
+  border-radius: 10px;
+  display: none;
+}
+/* .bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/background.png?v=1700750296653");
+  min-height: 100%;
+}
+ */
+.w3-bar .w3-button {
+  padding: 16px;
+}
+.panoramaview1 {
+  display: flex;
+  transform: translate(0px, 0px);
+  height: 100%;
+  width: 100%;
+}
+#scene {
+  position: absolute;
+  transform: translate(0px, 0px);
+}
+#infor {
+  width:580px;
+  height:100%;
+  background-color:black;
+  opacity:0.7;
+  position:absolute;
+  z-index:50;
+  right:0;
+/*   display:flex; */
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  display:none;
+}
+#closeText{
+  height:30px;
+  width:30px;
+/*   background-color:white; */
+  transform: translate(-255px, 0px);
+  margin:15px;
+  cursor: pointer;
+}
+#openText{
+  position:absolute;
+  z-index:50;
+  height:30px;
+  width:30px;
+  right:0;
+/*   background-color:white; */
+  transform: translate(-0px, 0px);
+  margin:15px;
+  cursor: pointer;
+}
+#showText{
+  height:554px;
+  width:540px;
+  position:relative;
+/*   background-color:green; */
+  color:white;
+    overflow-y: auto;
+
+}
+
+.a-enter-vr-button{
+  z-index:49;
+}
+/* .blank {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  padding: 25px;
+}
+#upfile {
+  height: 180px;
+  width: 663px;
+  border: 2px dashed;
+  flex-direction: column;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+#work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#buttonfile {
+  height: 43px;
+  width: 107px;
+} */
+
+/* #showpic {
+  width: 1109px;
+  height: 500px;
+  background-color: gray;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}*/
+.w3-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+/* .barSide {
+  opacity: 0.5;
+}
+#opacBar {
+  cursor: pointer;
+  pointer-events: auto;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(-65px, 250px);
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  width: 99px;
+  left: 0px;
+  background-color: black;
+  opacity: 0;
+}
+#picarr {
+  height: 70px;
+  width: 70px;
+  transform: rotate(180deg);
+  background-color: white;
+  border-radius: 90px;
+}
+#opacBar1 {
+
+  cursor: pointer;
+  pointer-events: auto;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(947px, -250px);
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  width: 99px;
+  left: 0px;
+  background-color: black;
+  opacity: 0;
+}
+#picarr1 {
+  height: 70px;
+  width: 70px;
+  transform: rotate(0deg);
+  background-color: white;
+  border-radius: 90px;
+}
+#showimg {
+  width: 882px;
+  height: 500px;
+  transform: translate(-49px, 0px);
+}
+#mp3 {
+  height: 50px;
+}
+#audioPlayer {
+  margin-top: 50px;
+  transform: translate(0px, 20px);
+}
+#trash1 {
+  display: flex;
+  z-index: 3;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(62px, 260px);
+  background-color: white;
+  opacity: 0.7;
+}
+#pushimg {
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(885px, 260px);
+  background-color: black;
+  opacity: 0.7;
+}
+#pushAudio {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  transform: rotate(270deg);
+  cursor: pointer;
+  pointer-events: auto;
+}
+#audioBtn {
+  transform: translate(633px, -45px);
+}
+#generate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 30px;
+}
+.open-website-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.open-website-button:hover {
+  background-color: #0056b3;
+}
+ */
