@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="buildvr.css" />
+    <title>Chế độ PANORAMA 360</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aframe-mouse-manipulation@0.2.1/dist/mouse-manipulation.min.js"></script>
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        line-height: 1.8;
+      }
+
+      /* Full height image header */
+    </style>
+  </head>
+  <body>
+    <div class="panoramaview1">
+      <a-scene embedded id="scene">
+        <a-sky
+          id="sky"
+          src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/b22ef579c4116d4f3400.jpg?v=1701331846957"
+        ></a-sky>
+        <a-camera position="0 0 0" spectator="true;"> </a-camera>
+        <a-sound
+          id="audio"
+          src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/mix_2m44s%20(audio-joiner.com).mp3?v=1701363121599"
+          autoplay="false"
+          loop="true"
+          position="0 0 0"
+        ></a-sound>
+        <!-- cursor configuration. -->
+        <a-entity
+          cursor="rayOrigin: mouse"
+          raycaster="objects: .draggable"
+          mouse-manipulation
+        >
+        </a-entity>
+
+        <!-- object to be manipulated-->
+      </a-scene>
+
+      <div class="arrow-container">
+        <div id="arrow1" class="arrow1 button"></div>
+        <div id="arrow2" class="arrow2 button"></div>
+      </div>
+      <div class="sound-container">
+        <img
+          class="nav"
+          id="trash"
+          width="35"
+          height="35"
+          src="https://img.icons8.com/ios/50/delete--v1.png"
+          alt="delete--v1"
+        />
+        <div id="trashText">Xoá ảnh khỏi chế độ panorama</div>
+        <div id="mute1" class="sound"></div>
+        <div class="playpause" id="sound"></div>
+      </div>
+      <div class="maintext">
+        <div id="text" class="text"></div>
+        <div id="text2" class="text2"></div>
+      </div>
+
+      <div id="openText" class="nav">
+        <img
+          src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/file%20(1).png?v=1701253216887"
+          style="height: 35px; width: 35px"
+        />
+      </div>
+      <div id="infor">
+        <div id="closeText">
+          <img
+            style="height: 35px; width: 35px"
+            src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/close.png?v=1701253820622"
+          />
+        </div>
+        <div id="saveText">
+          <img
+            style="height: 35px; width: 35px"
+            src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/save.png?v=1705215406902"
+          />
+        </div>
+        <div id="showText" contenteditable="true"></div>
+      </div>
+      <div id="saveHP" class="nav">
+        <img
+          style="height: 27px; width: 27px"
+          src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/diskette.png?v=1701798332199"
+        />
+      </div>
+      <div id="in4HP">
+        <div id="pic"></div>
+        <div
+          style="
+            width: 100%;
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+          "
+        >
+          <div
+            style="display: flex; justify-content: space-between; width: 45px"
+          >
+            <div style="position: relative">
+              <button id="save" style="position: fixed">Lưu</button>
+            </div>
+            <div style="position: relative">
+              <button id="delArr" style="position: fixed">Xoá mũi tên</button>
+            </div>
+          </div>
+          <div style="position: relative; width: 33px">
+            <img
+              id="closeHP"
+              style="
+                height: 35px;
+                width: 35px;
+                cursor: pointer;
+                position: fixed;
+              "
+              src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/close.png?v=1701253820622"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="openfile" class="nav">
+        <img
+          src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/image%20(2).png?v=1701800335630"
+          style="height: 35px; width: 35px"
+        />
+      </div>
+      <div id="addHP" class="nav"></div>
+      <div id="openWeb" class="nav"></div>
+      <div id="upfile">
+        <div id="closefile">
+          <img
+            style="height: 35px; width: 35px"
+            src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/close.png?v=1701253820622"
+          />
+        </div>
+        <!--         <div id="showText" contenteditable="true"></div> -->
+        <div id="upfileAnh">
+          <header id="headfile">Kéo và thả để tải ảnh lên</header>
+          <span style="margin: 7px; margin-bottom: 13px">Hoặc </span>
+          <button id="buttonfile">Chọn ảnh</button>
+          <input type="file" hidden id="inpbutton" accept="image/*" multiple />
+        </div>
+
+        <div id="mp3">
+          <input type="file" id="audioInput" accept="audio/*" />
+          <audio controls id="audioPlayer" src=""></audio>
+          <!--         <div id="audioBtn">
+          <img
+            id="pushAudio"
+            src="https://cdn.glitch.global/a87d9b90-8b77-4913-a6e4-8d059e9b58bf/%E2%80%94Pngtree%E2%80%94vector%20right%20arrow%20icon_4231911%20(1).png?v=1700903581715"
+          />
+        </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="menu" onmouseover="hoverNavbar()">
+      <svg
+        id="openMenu"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="40"
+        viewBox="0 0 448 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+        />
+      </svg>
+    </div>
+    <div class="navbar" onmouseleave="unhoverNavbar()">
+      <svg
+        class="icon"
+        id="xoa"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="40"
+        viewBox="0 0 448 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
+        />
+      </svg>
+      <svg
+        class="icon"
+        id="upload"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="40"
+        viewBox="0 0 380 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z"
+        />
+      </svg>
+      <svg
+        class="icon"
+        id="note"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="40"
+        viewBox="0 0 384 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM112 192H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+        />
+      </svg>
+      <svg
+        class="icon"
+        id="addbtn"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="40"
+        viewBox="0 0 512 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"
+        />
+      </svg>
+      <svg
+        class="icon"
+        id="opentab"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="40"
+        viewBox="0 0 512 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
+        />
+      </svg>
+      <span id="tatnav" onclick="hideNavbar()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="16"
+          width="16"
+          viewBox="0 0 512 512"
+        >
+          <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+          />
+        </svg>
+      </span>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/55ddd9a644.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="buildvr.js"></script>
+  </body>
+</html>
